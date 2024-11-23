@@ -27,11 +27,11 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./ec2/ec2
+        working-directory: ./vpv/vpc
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
-        working-directory: ./ec2/ec2
+        working-directory: ./vpc/vpc
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
