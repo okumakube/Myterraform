@@ -26,13 +26,13 @@ jobs:
           echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
       - name: Terraform Init
         run: terraform init
-        working-directory: ./vpv/vpc
+        working-directory: ./ec2/ec2
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
-        working-directory: ./vpc/vpc
+        working-directory: ./ec2/ec2
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve tfplan
-        working-directory: ./vpc/vpc
+        working-directory: ./ec2/ec2
