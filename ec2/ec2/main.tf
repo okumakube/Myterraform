@@ -1,3 +1,10 @@
+
+
+
+######################################################
+
+
+
 # Provider configuration
 provider "aws" {
   region = "us-east-1"  # Change this to your preferred region
@@ -43,7 +50,20 @@ resource "aws_instance" "example_ec2" {
 
   key_name = "dev"  # Replace with your key pair name
 
+  # User Data script to install Apache
+  user_data = <<-EOF
+              #!/bin/bash
+              yum update -y
+              yum install -y httpd
+              systemctl start httpd
+              systemctl enable httpd
+              echo "<html><h1>Apache Web Server Running in Terrafrom Class</h1></html>" > /var/www/html/index.html
+              EOF
+
   tags = {
     Name = "example-ec2-instance"
   }
 }
+
+
+
