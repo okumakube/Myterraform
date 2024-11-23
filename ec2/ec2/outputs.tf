@@ -3,7 +3,7 @@ output "instance_id" {
   value       = aws_instance.example_ec2.id
 }
 
-output "apache_url" {
-  description = "The Apache Web Server URL"
-  value       = "http://${aws_instance.example_ec2.public_ip}:80"
-}
+#output "apache_url" {
+#  description = "The Apache Web Server URL"
+#  value       = "http://${aws_instance.example_ec2.public_ip}:80"
+#}
