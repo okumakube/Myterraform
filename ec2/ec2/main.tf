@@ -5,7 +5,7 @@
 
 # # Security Group allowing SSH and HTTP
 # resource "aws_security_group" "ec2_security_group" {
-#   vpc_id = "vpc-0e38705949e1b8a24"
+#   vpc_id = "vpc-058bb0533c4939b2d"
 
 #   ingress {
 #     from_port   = 22
@@ -38,7 +38,7 @@
 #   ami           = "ami-012967cc5a8c9f891"  # Amazon Linux 2 AMI ID (update this as needed)
 #   instance_type = "t2.micro"               # Free tier instance type (adjust as needed)
 
-#   subnet_id              = "subnet-09e5aa2470abbd59f"
+#   subnet_id              = "subnet-008e3c08a010a52c6"
 #   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
 
 #   key_name = "dev"  # Replace with your key pair name
@@ -59,7 +59,7 @@ provider "aws" {
 
 # Security Group allowing SSH and HTTP
 resource "aws_security_group" "ec2_security_group" {
-  vpc_id = "vpc-0e38705949e1b8a24"
+  vpc_id = "vpc-058bb0533c4939b2d"
 
   ingress {
     from_port   = 22
@@ -92,7 +92,7 @@ resource "aws_instance" "example_ec2" {
   ami           = "ami-012967cc5a8c9f891"  # Amazon Linux 2 AMI ID (update this as needed)
   instance_type = "t2.micro"               # Free tier instance type (adjust as needed)
 
-  subnet_id              = "subnet-09e5aa2470abbd59f"
+  subnet_id              = "subnet-008e3c08a010a52c6"
   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
 
   key_name = "dev"  # Replace with your key pair name
